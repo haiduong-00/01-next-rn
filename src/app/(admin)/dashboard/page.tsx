@@ -1,17 +1,20 @@
-"use client";
-import { Layout} from "antd";
-import React from "react";
-import AdminFooter from "../../../components/layout/admin.footer";
-import AdminHeader from "../../../components/layout/admin.header";
-import AdminSiderBar from "../../../components/layout/admin.sidebar";
+'use client'
+
+import AdminCard from "@/components/admin/admin.card";
 
 const DashboardPage = () => {
 
     return (
         <div>
-            DashboardPage
+            <AdminCard />
         </div>
-    );
-};
+    )
+}
 
 export default DashboardPage;
+
+
+
+
+
+
