@@ -2,7 +2,7 @@
   "name": "01-next-rn",
   "version": "0.1.0",
   "author": {
-    "name": "Dinh Hai Duong - Nextjs"
+    "name": "Dinh Hai Duong - Next.js"
   },
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.4.0",
     "@ant-design/nextjs-registry": "1.0.0",
     "antd": "5.19.3",
     "next": "14.2.5",
