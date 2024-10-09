@@ -1,5 +1,22 @@
 {
-  "node": {},
+  "node": {
+    "a8941b3bbb2f0b2111adb2711b09446c914a70e5": {
+      "workers": {
+        "app/(guest)/auth/login/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fduong%2FJWT-project%2F01-next-rn%2Fsrc%2Fcomponents%2Fauth%2Flogin.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/(guest)/auth/login/page": "rsc"
+      }
+    },
+    "9392ff1d432facd165ed454b9dc306958577f05a": {
+      "workers": {
+        "app/(guest)/auth/login/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fduong%2FJWT-project%2F01-next-rn%2Fsrc%2Futils%2Faction.ts%22%2C%5B%22authenticate%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/(guest)/auth/login/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
-  "encryptionKey": "sMY4h+Z7xQZNXcTv1mHsWiS/6RbQt59qL60FRPeQoG8="
+  "encryptionKey": "z62SsE4XLsbVQ0i0aOjK+QKtAYF4/rHDQw1pHd/oDkQ="
 }
