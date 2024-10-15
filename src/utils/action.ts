@@ -1,23 +1,34 @@
 'use server'
 
-import {InvalidLoginError, signIn} from "@/auth";
+import { signIn } from "@/auth";
 
-export async function authenticate(email: string, password: string) {
+export async function authenticate(username: string, password: string) {
     try {
         const r = await signIn("credentials", {
-            username: email,
+            username: username,
             password: password,
             // callbackUrl: "/",
             redirect: false,
         })
-        return r
+        console.log(">>> check r: ", r)
+        return r;
     } catch (error) {
-            return {"error": "Incorrect username or password"}
+        if ((error as any).name === "InvalidEmailPasswordError") {
+            return {
+                error: (error as any).type,
+                code: 1
+            }
 
-        // if (error.cause.err instanceof InvalidLoginError) {
-        //     return {"error": "Incorrect username or password"}
-        // } else {
-        //     throw new Error("Failed to authenticate")
-        // }
+        } else if ((error as any).name === "InactiveAccountError") {
+            return {
+                error: (error as any).type,
+                code: 2
+            }
+        } else {
+            return {
+                error: "Internal server error",
+                code: 0
+            }
+        }
     }
 }

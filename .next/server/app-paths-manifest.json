@@ -1,6 +1,5 @@
 {
   "/(guest)/auth/login/page": "app/(guest)/auth/login/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(admin)/dashboard/user/page": "app/(admin)/dashboard/user/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
   "/(admin)/dashboard/page": "app/(admin)/dashboard/page.js"
 }
