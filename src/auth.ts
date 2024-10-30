@@ -16,7 +16,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       authorize: async (credentials) => {
         const res = await sendRequest<IBackendRes<ILogin>>({
           method: "POST",
-          url: "http://localhost:8080/api/v1/auth/login",
+          url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/auth/login`,
           body: {
             username: credentials.username,
             password: credentials.password
@@ -58,9 +58,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
     authorized: async ({ auth }) => {
       // Logged in users are authenticated, otherwise redirect to login page
-      return !!auth
+      const isLoggedIn = !!auth;
+      if (isLoggedIn) return true;
+      // return !!auth;
+      /* !!auth sẽ chuyển đổi giá trị của auth thành một boolean. 
+       Nếu auth có giá trị(tức là user đã đăng nhập), return true 
+      */
     },
   },
-
-
 })

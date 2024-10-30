@@ -1,8 +1,7 @@
 'use client'
-import { Button, Col, Divider, Form, Input, Row, notification } from 'antd';
+import { Button, Col, Divider, Form, Input, Row, message, notification } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import Link from 'next/link';
-import { signIn } from "next-auth/react"
 import { authenticate } from '../../utils/action';
 import { useRouter } from 'next/navigation';
 
@@ -22,6 +21,7 @@ const Login = () => {
                 description: res?.error
             })
             if (res?.code === 2) {
+                message.info('Bạn cần xác minh tài khoản.')
                 router.push('/verify')
             }
         } else {
